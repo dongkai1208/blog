@@ -6,6 +6,15 @@ set :default_stage, "development"
 require "capistrano/ext/multistage"     #多stage部署所需  
 
 set :application, "blog"   #应用名称  
+set :keep_releases, 5          #只保留5个备份  
+
+set :repository, "git@github.com:dongkai1208/blog.git"
+
+set :deploy_to, "/var/www/cap/#{application}"  #部署到远程机器的路径  
+
+set :user, "dk"              #登录部署机器的用户名
+                                 #set :password, "doraemon"      #登录部署机器的密码， 如果不设部署时需要输入密码
+
 
 default_run_options[:pty] = true          #pty: 伪登录设备  
                                  #default_run_options[:shell] = false     #Disable sh wrapping
@@ -16,15 +25,15 @@ set :runner, "user2"                          #以user2用户启动服务
                                  #set :svn_username, "xxxx"
 
 
-set :scm, :git                        #
-set :repository, "git@"                                # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+set :scm, :git                     #
+                                 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
                                  #set :deploy_via, :copy                     #如果SCM设为空， 也可通过直接copy本地repo部署
 
 
 
                                  # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
                                  # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
-
+set :host, "{user}@115.28.139.161"
 role :web, "115.28.139.161"                          # Your HTTP server, Apache/etc
 role :app, "115.28.139.161"                          # This may be the same as your `Web` server
 role :db,  "115.28.139.161", :primary => true # This is where Rails migrations will run
