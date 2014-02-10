@@ -8,7 +8,7 @@ require "capistrano/ext/multistage"     #多stage部署所需
 set :application, "blog"   #应用名称  
 set :keep_releases, 5          #只保留5个备份  
 
-set :repository, "git@github.com:dongkai1208/blog.git"
+set :repository, "https://github.com/dongkai1208/blog.git"
 
 set :deploy_to, "/var/www/cap/#{application}"  #部署到远程机器的路径  
 
