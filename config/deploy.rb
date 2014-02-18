@@ -52,7 +52,7 @@ namespace :deploy do
   namespace :shared do
     desc "setup shared folder symblink"
     task :setup do
-      run "cd #{deploy_to}/current; rm -rf shared; ln -s #{shared_path} ."
+      run "cd #{deploy_to}; rm -rf shared; ln -s #{shared_path} ."
     end
   end
 
@@ -66,18 +66,18 @@ namespace :deploy do
 
 
   task :start do
-    run "cd #{deploy_to}/current && ./crmd.sh start"
-    #try_sudo "cd #{deploy_to}/current && ./restart.sh"
+    run "cd #{deploy_to} && ./crmd.sh start"
+    #try_sudo "cd #{deploy_to} && ./restart.sh"
   end
 
 
   task :stop do
-    run "cd #{deploy_to}/current && ./crmd.sh stop"
+    run "cd #{deploy_to} && ./crmd.sh stop"
   end
 
 
   task :restart do
-    run "cd #{deploy_to}/current && ./crmd.sh restart"
+    run "cd #{deploy_to} && ./crmd.sh restart"
   end
 
 end
