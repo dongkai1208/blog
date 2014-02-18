@@ -13,7 +13,7 @@ set :application, "blog"   #the name of application
 set :keep_releases, 5          #keep 5 backups
 
 
-set :deploy_to, "/var/www#{application}"  #the path of remote server
+set :deploy_to, "/var/www/#{application}"  #the path of remote server
 set :user, "dk"              #the user name of deploy server
 set :password, "doraemon"      #the password of deploy server
 
