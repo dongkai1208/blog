@@ -1,4 +1,7 @@
 Blog::Application.routes.draw do
+
+  root :to => 'posts#index'
+
   get "comments/create"
 
   get "comments/destory"
