@@ -33,7 +33,7 @@ set :scm, "git"
 
 set :branch, "master"
 
-role :web, "115.28.139.161"                          # Your HTTP server, Apache/etc
+role :web, "115.28.139.161"                          #  HTTP server, Apache/etc
 role :app, "115.28.139.161"                          # This may be the same as your `Web` server
 role :db,  "115.28.139.161", :primary => true # This is where Rails migrations will run
                                  #role :db,  "your slave db-server here"
@@ -52,7 +52,7 @@ namespace :deploy do
   namespace :shared do
     desc "setup shared folder symblink"
     task :setup do
-      run "cd #{deploy_to}; rm -rf shared; ln -s #{shared_path} ."
+      run "cd #{deploy_to}; rm -rf shared; ln -s #{shared_path}"
     end
   end
 
