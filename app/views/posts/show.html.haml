@@ -1,0 +1,23 @@
+.show_blog
+  .show_title
+    = @post.title
+  .show_text
+    = @post.text
+  .comment
+    .show_comment Comments
+
+    - @post.comments.each do |comment|
+      .comment_content
+        .comment_text #{comment.text}
+        .comment_time #{time_ago_in_words comment.created_at} ago
+        .comment_link #{link_to "Delete Comment", [@post, comment], :method => :delete, :confirm => "Are you sure?"}
+
+    = form_for [@post,@post.comments.build] do |f|
+      .comment_area #{f.text_area :text, :size => '400x10'}
+      %button.comment_post{:type => "submit"}  Post Comment
+  .link
+    = link_to "Back", posts_path
+    |
+    = link_to "Edit", edit_post_path(@post)
+    |
+    = link_to "Delete",@post,:method => :delete, :confirm => "Are you sure?"

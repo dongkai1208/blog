@@ -1,3 +1,85 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+h1 {
+  padding: 1.5em;
+  color: #000000;
+}
+
+.whole_blog {
+  position: relative;
+  border-bottom: 1px solid #ccc;
+  background-color: lightblue;
+  .blog {
+    margin-left: 1em;
+  }
+  .blog_text {
+    padding: 0.5em;
+    font-size: 18px;
+  }
+}
+
+.post_btn {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 10px;
+  .btn {
+    background: darkgoldenrod;
+    color: black;
+  }
+}
+
+.show_blog {
+  position: relative;
+  padding-top: 5em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 2em;
+  background: lightblue;
+  .show_title {
+    font-size: 30px;
+    color: #000000;
+    font-weight: 700;
+  }
+  .show_text {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-size: 18px;
+    color: #000000;
+  }
+  .comment {
+    border-top: solid;
+    outline-color: blue;
+    .show_comment {
+      font-size: 19px;
+      font-weight: 700;
+      margin-top: 0.5em;
+    }
+    .comment_content {
+      margin-top: 1em;
+      .comment_text {
+        font-size: 18px;
+        color: #000000;
+      }
+      .comment_time {
+        font-size: 12px;
+        font-style: italic;
+      }
+      .comment_link {
+        text-decoration: underline;
+        border-color: darkred;
+        margin-top: 0.5em;
+      }
+    }
+    .comment_area {
+      margin-top: 1em;
+    }
+    .comment_post {
+      background: darkgoldenrod;
+      font-size: 18px;
+      color: #000000;
+    }
+  }
+  .link {
+    border-top: solid;
+    outline-color: blue;
+    padding-top: 1em;
+  }
+}

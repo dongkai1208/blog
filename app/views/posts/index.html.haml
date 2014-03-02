@@ -1,0 +1,13 @@
+%h1 Welcome to Dong Kai's Blog
+
+- @posts.each do |post|
+  .whole_blog
+    .blog
+      %h2= link_to post.title, post
+      %p
+        %i -#{time_ago_in_words post.created_at} ago
+      %p.blog_text
+        = truncate post.text
+.post_btn
+  %button.btn
+    = link_to "New Post", new_post_path
